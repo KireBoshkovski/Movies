@@ -1,0 +1,82 @@
+:host {
+    display: block;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    background-color: #ffffff;
+    color: #333;
+    padding: 2rem;
+    border-radius: 12px;
+    max-width: 1200px;
+    margin: 2rem auto;
+    box-shadow: 0 6px 24px rgba(0, 0, 0, 0.1);
+}
+
+.search-container {
+    max-width: 100%;
+    margin: 0;
+    padding: 0;
+    border-radius: 0;
+    background-color: transparent;
+    box-shadow: none;
+}
+
+.search-form {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 2rem;
+}
+
+.search-form input[type="text"],
+.search-form input[type="number"],
+.search-form select {
+    padding: 0.75rem 1rem;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 1rem;
+    flex: 1 1 200px;
+    min-width: 200px;
+    background-color: #fdfdfd;
+    transition: border-color 0.2s ease;
+}
+
+.search-form input:focus,
+.search-form select:focus {
+    border-color: #007bff;
+    outline: none;
+}
+
+.search-form button {
+    padding: 0.75rem 1.5rem;
+    font-size: 1rem;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.search-form button:hover {
+    background-color: #0056b3;
+}
+
+.search-container ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 1.5rem;
+}
+
+.search-container show-item {
+    display: block;
+    height: 100%;
+}
+
+.search-container pagination {
+    display: block;
+    margin-top: 2rem;
+}

@@ -1,0 +1,50 @@
+@if (show$ | async; as show) {
+<div class="media-container">
+    <header class="media-header">
+        <h1>{{ show.Title }} ({{ show.Year }})</h1>
+        <p>{{ show.Rated }} | {{ show.Runtime }} | {{ show.Genre }}</p>
+    </header>
+
+    <div class="main-content">
+        <img [src]="show.Poster" [alt]="'Poster for ' + show.Title" class="poster">
+
+        <div class="details">
+            <p class="plot">{{ show.Plot }}</p>
+
+            <p><strong>Director:</strong> {{ show.Director }}</p>
+            <p><strong>Writer:</strong> {{ show.Writer }}</p>
+            <p><strong>Actors:</strong> {{ show.Actors }}</p>
+            <p><strong>Language:</strong> {{ show.Language }}</p>
+            <p><strong>Country:</strong> {{ show.Country }}</p>
+            <p><strong>Awards:</strong> {{ show.Awards }}</p>
+
+            @if (show.Type === 'series' && show.totalSeasons) {
+            <p><strong>Total Seasons:</strong> {{ show.totalSeasons }}</p>
+            }
+
+            @if (show.Type === 'movie' && show.BoxOffice) {
+            <p><strong>Box Office:</strong> {{ show.BoxOffice }}</p>
+            }
+        </div>
+    </div>
+
+    <div class="ratings">
+        <h2>Ratings</h2>
+        @if (show.Ratings && show.Ratings.length > 0) {
+        <ul>
+            @for (rating of show.Ratings; track rating.Source) {
+            <li><strong>{{ rating.Source }}:</strong> {{ rating.Value }}</li>
+            }
+        </ul>
+        }
+        <div class="imdb-rating">
+            <p>IMDb: {{ show.imdbRating }} <span>({{ show.imdbVotes }} votes)</span></p>
+            @if(show.Metascore !== 'N/A') {
+            <p>Metascore: {{ show.Metascore }}</p>
+            }
+        </div>
+    </div>
+</div>
+} @else {
+<p class="loading-message">Loading media details...</p>
+}

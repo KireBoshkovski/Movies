@@ -1,0 +1,8 @@
+<li [routerLink]="['/show', show.imdbID]">
+    <img [src]="show.Poster" [alt]="show.Title" />
+    <div>
+        <span>{{ show.Title }}</span>
+        <span>{{ show.Year }}</span>
+        <span>{{ show.Type }}</span>
+    </div>
+</li>
