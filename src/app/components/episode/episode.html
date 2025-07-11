@@ -1,13 +1,16 @@
-@if (show$ | async; as show) {
+@if (episode$ | async; as show) {
 <div class="media-container">
     <header class="media-header">
-        <h1>{{ show.Title }} ({{ show.Year }})</h1>
-        <p>{{ show.Rated }} | {{ show.Runtime }} | {{ show.Genre }}</p>
+        <div class="header-content">
+            <img [src]="show.Poster" [alt]="'Poster for ' + show.Title" class="poster">
+            <div class="header-text">
+                <h1>{{ show.Title }} ({{ show.Year }})</h1>
+                <p>{{ show.Rated }} | {{ show.Runtime }} | {{ show.Genre }}</p>
+            </div>
+        </div>
     </header>
 
     <div class="main-content">
-        <img [src]="show.Poster" [alt]="'Poster for ' + show.Title" class="poster">
-
         <div class="details">
             <p class="plot">{{ show.Plot }}</p>
 
@@ -27,17 +30,7 @@
             }
         </div>
     </div>
-    @if (show.Type === 'series' && show.totalSeasons) {
-    <div class="seasons">
-        <label for="seasonSelect"><strong>Season:</strong></label>
-        <select #season id="seasonSelect" [value]="selectedSeason" (change)="onSeasonChange(season.value)">
-            @for (season of getSeasons(show.totalSeasons); track season) {
-            <option [value]="season">Season {{ season }}</option>
-            }
-        </select>
-        <season [selectedSeason]="selectedSeason" [id]="show.imdbID"></season>
-    </div>
-    }
+
     <div class="ratings">
         <h2>Ratings</h2>
         @if (show.Ratings && show.Ratings.length > 0) {

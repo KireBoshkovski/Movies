@@ -1,0 +1,13 @@
+@if (season$ | async; as seasonData) {
+<h2>{{ seasonData.Title }} - Season {{ seasonData.Season }}</h2>
+
+<ul>
+    @for (episode of seasonData.Episodes; track episode.imdbID) {
+    <li class="episode" [routerLink]="['/episode', episode.imdbID]">
+        <strong>Ep {{ episode.Episode }}: {{ episode.Title }}</strong>
+        <p>Released: {{ episode.Released }}</p>
+        <p>IMDb Rating: {{ episode.imdbRating }}</p>
+    </li>
+    }
+</ul>
+}
