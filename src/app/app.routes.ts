@@ -7,22 +7,22 @@ export const routes: Routes = [
     {
         path: '',
         redirectTo: 'search',
-        pathMatch: 'full'
+        pathMatch: 'full',
     },
     {
         path: 'search',
-        component: Search
+        component: Search,
     },
     {
         path: 'show/:id',
-        component: Details
+        component: Details,
     },
     {
         path: 'episode/:id',
-        component: Episode
+        component: Episode,
     },
     {
         path: '**',
-        redirectTo: 'search'
-    }
+        redirectTo: 'search',
+    },
 ];

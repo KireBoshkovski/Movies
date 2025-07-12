@@ -2,13 +2,22 @@
 <nav aria-label="Search results pagination">
     <ul class="pagination">
         <li class="page-item" [class.disabled]="currentPage === 1">
-            <button class="page-link" (click)="goToFirstPage()" [disabled]="currentPage === 1" aria-label="First page">
+            <button
+                class="page-link"
+                (click)="goToFirstPage()"
+                [disabled]="currentPage === 1"
+                aria-label="First page"
+            >
                 &laquo;
             </button>
         </li>
         <li class="page-item" [class.disabled]="currentPage === 1">
-            <button class="page-link" (click)="goToPreviousPage()" [disabled]="currentPage === 1"
-                aria-label="Previous page">
+            <button
+                class="page-link"
+                (click)="goToPreviousPage()"
+                [disabled]="currentPage === 1"
+                aria-label="Previous page"
+            >
                 &lsaquo;
             </button>
         </li>
@@ -22,14 +31,22 @@
         }
 
         <li class="page-item" [class.disabled]="currentPage === totalPages">
-            <button class="page-link" (click)="goToNextPage()" [disabled]="currentPage === totalPages"
-                aria-label="Next page">
+            <button
+                class="page-link"
+                (click)="goToNextPage()"
+                [disabled]="currentPage === totalPages"
+                aria-label="Next page"
+            >
                 &rsaquo;
             </button>
         </li>
         <li class="page-item" [class.disabled]="currentPage === totalPages">
-            <button class="page-link" (click)="goToLastPage()" [disabled]="currentPage === totalPages"
-                aria-label="Last page">
+            <button
+                class="page-link"
+                (click)="goToLastPage()"
+                [disabled]="currentPage === totalPages"
+                aria-label="Last page"
+            >
                 &raquo;
             </button>
         </li>

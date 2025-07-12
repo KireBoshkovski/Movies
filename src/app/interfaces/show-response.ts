@@ -1,4 +1,4 @@
-import { Show } from "./show";
+import { Show } from './show';
 
 export interface ShowResponse {
     Search: Show[];

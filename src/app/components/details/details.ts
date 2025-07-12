@@ -4,13 +4,13 @@ import { ActivatedRoute } from '@angular/router';
 import { switchMap, Observable } from 'rxjs';
 import { ShowDetails } from '../../interfaces/details';
 import { CommonModule } from '@angular/common';
-import { Season } from "../season/season";
+import { Season } from '../season/season';
 
 @Component({
     selector: 'show',
     imports: [CommonModule, Season],
     templateUrl: './details.html',
-    styleUrl: './details.css'
+    styleUrl: './details.css',
 })
 export class Details implements OnInit {
     service = inject(ShowService);
@@ -22,7 +22,7 @@ export class Details implements OnInit {
 
     ngOnInit() {
         this.show$ = this.route.paramMap.pipe(
-            switchMap(params => {
+            switchMap((params) => {
                 const id = params.get('id');
                 return this.service.getById(id!);
             })

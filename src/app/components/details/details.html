@@ -2,11 +2,22 @@
 <div class="media-container">
     <header class="media-header">
         <h1>{{ show.Title }} ({{ show.Year }})</h1>
-        <p>{{ show.Rated }} | {{ show.Runtime }} | {{ show.Genre }}</p>
+        <p>
+            {{ show.Rated }} | {{ show.Runtime }} | {{ show.Genre }} |
+            <a
+                [href]="'https://www.imdb.com/title/' + show.imdbID"
+                target="_blank"
+                >Go to IMDb</a
+            >
+        </p>
     </header>
 
     <div class="main-content">
-        <img [src]="show.Poster" [alt]="'Poster for ' + show.Title" class="poster">
+        <img
+            [src]="show.Poster"
+            [alt]="'Poster for ' + show.Title"
+            class="poster"
+        />
 
         <div class="details">
             <p class="plot">{{ show.Plot }}</p>
@@ -20,9 +31,7 @@
 
             @if (show.Type === 'series' && show.totalSeasons) {
             <p><strong>Total Seasons:</strong> {{ show.totalSeasons }}</p>
-            }
-
-            @if (show.Type === 'movie' && show.BoxOffice) {
+            } @if (show.Type === 'movie' && show.BoxOffice) {
             <p><strong>Box Office:</strong> {{ show.BoxOffice }}</p>
             }
         </div>
@@ -30,7 +39,12 @@
     @if (show.Type === 'series' && show.totalSeasons) {
     <div class="seasons">
         <label for="seasonSelect"><strong>Season:</strong></label>
-        <select #season id="seasonSelect" [value]="selectedSeason" (change)="onSeasonChange(season.value)">
+        <select
+            #season
+            id="seasonSelect"
+            [value]="selectedSeason"
+            (change)="onSeasonChange(season.value)"
+        >
             @for (season of getSeasons(show.totalSeasons); track season) {
             <option [value]="season">Season {{ season }}</option>
             }
@@ -43,12 +57,17 @@
         @if (show.Ratings && show.Ratings.length > 0) {
         <ul>
             @for (rating of show.Ratings; track rating.Source) {
-            <li><strong>{{ rating.Source }}:</strong> {{ rating.Value }}</li>
+            <li>
+                <strong>{{ rating.Source }}:</strong> {{ rating.Value }}
+            </li>
             }
         </ul>
         }
         <div class="imdb-rating">
-            <p>IMDb: {{ show.imdbRating }} <span>({{ show.imdbVotes }} votes)</span></p>
+            <p>
+                IMDb: {{ show.imdbRating }}
+                <span>({{ show.imdbVotes }} votes)</span>
+            </p>
             @if(show.Metascore !== 'N/A') {
             <p>Metascore: {{ show.Metascore }}</p>
             }

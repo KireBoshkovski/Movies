@@ -9,7 +9,7 @@ import { CommonModule } from '@angular/common';
     selector: 'episode',
     imports: [CommonModule],
     templateUrl: './episode.html',
-    styleUrl: './episode.css'
+    styleUrl: './episode.css',
 })
 export class Episode implements OnInit {
     service = inject(ShowService);
@@ -19,10 +19,10 @@ export class Episode implements OnInit {
 
     ngOnInit() {
         this.episode$ = this.route.paramMap.pipe(
-            switchMap(params => {
+            switchMap((params) => {
                 const id = params.get('id');
                 return this.service.getById(id!);
             })
-        )
+        );
     }
 }

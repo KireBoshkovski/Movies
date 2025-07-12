@@ -6,7 +6,7 @@ import { RouterModule } from '@angular/router';
     selector: 'show-item',
     imports: [RouterModule],
     templateUrl: './show-item.html',
-    styleUrl: './show-item.css'
+    styleUrl: './show-item.css',
 })
 export class ShowItem {
     @Input() show!: Show;

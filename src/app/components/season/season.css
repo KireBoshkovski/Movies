@@ -1,40 +1,48 @@
 h2 {
-  font-size: 1.8rem;
-  margin-bottom: 1rem;
-  color: #333;
-  border-bottom: 2px solid #ccc;
-  padding-bottom: 0.5rem;
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+    color: #333;
+    border-bottom: 2px solid #ccc;
+    padding-bottom: 0.5rem;
 }
 
 ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
+    list-style: none;
+    padding: 0;
+    margin: 0;
 }
 
 .episode {
-  background-color: #f9f9f9;
-  border: 1px solid #ddd;
-  border-left: 4px solid #007BFF;
-  padding: 1rem;
-  margin-bottom: 1rem;
-  border-radius: 8px;
-  transition: background-color 0.2s ease;
+    margin-bottom: 1rem;
+    list-style: none;
 }
 
-.episode:hover {
-  background-color: #f1f1f1;
+.episode-link {
+    display: block;
+    width: 100%;
+    padding: 1rem;
+    text-decoration: none;
+    color: inherit;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-left: 4px solid #007bff;
+    border-radius: 8px;
+    transition: background-color 0.2s ease;
 }
 
-.episode strong {
-  font-size: 1.1rem;
-  display: block;
-  color: #222;
-  margin-bottom: 0.5rem;
+.episode-link:hover {
+    background-color: #e6e6e6;
 }
 
-.episode p {
-  margin: 0.3rem 0;
-  color: #555;
-  font-size: 0.95rem;
+.episode-link strong {
+    font-size: 1.1rem;
+    display: block;
+    color: #222;
+    margin-bottom: 0.5rem;
+}
+
+.episode-link p {
+    margin: 0.3rem 0;
+    color: #555;
+    font-size: 0.95rem;
 }

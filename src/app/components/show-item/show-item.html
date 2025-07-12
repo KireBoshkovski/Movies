@@ -1,8 +1,10 @@
-<li [routerLink]="['/show', show.imdbID]">
-    <img [src]="show.Poster" [alt]="show.Title" />
-    <div>
-        <span>{{ show.Title }}</span>
-        <span>{{ show.Year }}</span>
-        <span>{{ show.Type }}</span>
-    </div>
+<li>
+    <a [routerLink]="['/show', show.imdbID]" class="show-link">
+        <img [src]="show.Poster" [alt]="show.Title" />
+        <div class="show-details">
+            <span class="show-title">{{ show.Title }}</span>
+            <span class="show-year">{{ show.Year }}</span>
+            <span class="show-type">{{ show.Type }}</span>
+        </div>
+    </a>
 </li>

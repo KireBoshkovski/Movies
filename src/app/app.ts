@@ -5,7 +5,7 @@ import { RouterModule } from '@angular/router';
     selector: 'app-root',
     imports: [RouterModule],
     templateUrl: './app.html',
-    styleUrl: './app.css'
+    styleUrl: './app.css',
 })
 export class App {
     protected title = 'tv-shows';

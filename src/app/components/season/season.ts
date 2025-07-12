@@ -10,7 +10,7 @@ import { RouterModule } from '@angular/router';
     selector: 'season',
     imports: [CommonModule, RouterModule],
     templateUrl: './season.html',
-    styleUrl: './season.css'
+    styleUrl: './season.css',
 })
 export class Season {
     seasonData: SeasonResponse | null = null;
@@ -25,11 +25,10 @@ export class Season {
 
     ngOnChanges() {
         this.season$ = this.route.paramMap.pipe(
-            switchMap(params => {
+            switchMap((params) => {
                 const id = params.get('id');
                 return this.service.getSeason(id!, this.selectedSeason);
             })
         );
     }
-
 }

@@ -1,4 +1,4 @@
 export interface Rating {
-  Source: string;
-  Value: string;
+    Source: string;
+    Value: string;
 }

@@ -6,15 +6,20 @@ import { ShowDetails } from '../interfaces/details';
 import { SeasonResponse } from '../interfaces/season-response';
 
 @Injectable({
-    providedIn: 'root'
+    providedIn: 'root',
 })
 export class ShowService {
     http = inject(HttpClient);
 
-    private api = "http://www.omdbapi.com/";
+    private api = 'http://www.omdbapi.com/';
     private apiKey = '37fe0698';
 
-    search(query: string, type?: string, year?: string, page?: number): Observable<ShowResponse> {
+    search(
+        query: string,
+        type?: string,
+        year?: string,
+        page?: number
+    ): Observable<ShowResponse> {
         let params = new HttpParams()
             .set('apikey', this.apiKey)
             .set('s', query);
@@ -28,7 +33,7 @@ export class ShowService {
         }
 
         if (page) {
-            params = params.set("page", page.toString());
+            params = params.set('page', page.toString());
         }
 
         console.log(params);
@@ -36,9 +41,7 @@ export class ShowService {
     }
 
     getById(id: string): Observable<ShowDetails> {
-        let params = new HttpParams()
-            .set('apikey', this.apiKey)
-            .set('i', id);
+        let params = new HttpParams().set('apikey', this.apiKey).set('i', id);
 
         console.log(params);
 

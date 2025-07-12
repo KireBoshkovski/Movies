@@ -3,10 +3,12 @@
 
 <ul>
     @for (episode of seasonData.Episodes; track episode.imdbID) {
-    <li class="episode" [routerLink]="['/episode', episode.imdbID]">
-        <strong>Ep {{ episode.Episode }}: {{ episode.Title }}</strong>
-        <p>Released: {{ episode.Released }}</p>
-        <p>IMDb Rating: {{ episode.imdbRating }}</p>
+    <li class="episode">
+        <a [routerLink]="['/episode', episode.imdbID]" class="episode-link">
+            <strong>Ep {{ episode.Episode }}: {{ episode.Title }}</strong>
+            <p>Released: {{ episode.Released }}</p>
+            <p>IMDb Rating: {{ episode.imdbRating }}</p>
+        </a>
     </li>
     }
 </ul>

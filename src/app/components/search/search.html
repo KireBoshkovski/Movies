@@ -1,15 +1,26 @@
 <div class="search-container">
     <div class="search-form">
-
-        <input #title type="text" placeholder="Title" (input)="onTitleInput(title.value)">
+        <input
+            #title
+            type="text"
+            placeholder="Title"
+            (input)="onTitleInput(title.value)"
+        />
         <select #type (change)="onTypeChange(type.value)">
             <option selected value="">Any</option>
             <option value="movie">Movie</option>
             <option value="series">Series</option>
             <option value="episode">Episode</option>
         </select>
-        <input #year type="number" min="1900" max="2030" placeholder="Year of release"
-            (input)="onYearChange(year.value)" [value]="year || ''">
+        <input
+            #year
+            type="number"
+            min="1900"
+            max="2030"
+            placeholder="Year of release"
+            (input)="onYearChange(year.value)"
+            [value]="year || ''"
+        />
         <button (click)="search()">Search</button>
     </div>
     <ul>
@@ -18,7 +29,11 @@
         }
     </ul>
 
-    <pagination [currentPage]="currentPage" [totalResults]="totalResults" [resultsPerPage]="resultsPerPage"
-        (pageChange)="onPageChange($event)">
+    <pagination
+        [currentPage]="currentPage"
+        [totalResults]="totalResults"
+        [resultsPerPage]="resultsPerPage"
+        (pageChange)="onPageChange($event)"
+    >
     </pagination>
 </div>

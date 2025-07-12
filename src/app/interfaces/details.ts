@@ -21,7 +21,7 @@ export interface ShowDetails {
     imdbVotes: string;
     imdbID: string;
     Type: 'movie' | 'series' | 'episode';
-    totalSeasons?: string;  // Only for series
-    BoxOffice?: string;     // Optional for movies i guess
+    totalSeasons?: string; // Only for series
+    BoxOffice?: string; // Optional for movies i guess
     Response: 'True' | 'False';
 }
